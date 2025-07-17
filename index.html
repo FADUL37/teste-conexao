@@ -58,11 +58,11 @@
       const resultEl = document.getElementById('result');
       resultEl.innerHTML = '<p class="loading">⏳ Testando velocidade...</p>';
 
-      const downloadUrl = 'https://speed.cloudflare.com/__down?bytes=5000000'; // 5MB com CORS liberado
+      const downloadUrl = 'https://speed.cloudflare.com/__down?bytes=5000000'; // CORS OK
       const startTime = new Date().getTime();
 
       try {
-        const response = await fetch(downloadUrl, { cache: 'no-store' });
+        const response = await fetch(downloadUrl, { mode: 'cors', cache: 'no-store' });
         const blob = await response.blob();
         const endTime = new Date().getTime();
 
