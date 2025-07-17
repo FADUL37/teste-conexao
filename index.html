@@ -56,9 +56,9 @@
   <script>
     async function startTest() {
       const resultEl = document.getElementById('result');
-      resultEl.innerHTML = '<p class="loading">⏳ Testando...</p>';
+      resultEl.innerHTML = '<p class="loading">⏳ Testando velocidade...</p>';
 
-      const downloadUrl = 'https://ipv4.download.thinkbroadband.com/5MB.zip';
+      const downloadUrl = 'https://speed.cloudflare.com/__down?bytes=5000000'; // 5MB com CORS liberado
       const startTime = new Date().getTime();
 
       try {
